@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem de Alunos</title>
+    <title>Clients | GN</title>
 </head>
 <body>
     <h1>Clients List | GN</h1>
@@ -32,10 +32,8 @@
                         <td> <?= $data["email"]; ?> </td>
                         <td> <?= $data["phone"]; ?> </td>
                         <td> 
-                            <a href="./index.php?a=search&id=<?= $data['id'] ?>">Editar</a>
+                            <a href="./index.php?a=search&v=edit&search=<?= $data['id'] ?>">Editar</a>
                             <a href="./index.php?a=delete&id=<?= $data['id'] ?>">Deletar</a> 
-                        </td>
-                        <td>
                         </td>
                     </tr>
                 <?php endforeach; ?>

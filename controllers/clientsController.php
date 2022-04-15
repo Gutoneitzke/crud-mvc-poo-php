@@ -15,9 +15,9 @@
             require_once "./views/index.php";
         }
 
-        public function search($data){
+        public function search($data,$view){
             $resultData = $this->model->search($data);
-            require_once "./views/index.php";
+            require_once "./views/$view.php";
         }
 
         public function delete($id){
@@ -33,31 +33,5 @@
             $this->getAll();
         }
     }
-
-    $controller = new ClientsController();
-
-    $action = isset($_GET['a']) ? $_GET['a'] : 'getAll';
-    if($action == "delete")
-    {
-        $id = $_GET['id'];
-        $controller->{$action}($id);
-    }
-    else if($action == "search")
-    {
-        $data = $_GET['search'];
-        if(!$data)
-        {
-            $controller->getAll();
-        }
-        else
-        {
-            $controller->{$action}($data);
-        }
-    }
-    else
-    {
-        $controller->{$action}();
-    }
-    
 
 ?>
