@@ -35,10 +35,6 @@
         $data = array('name'=>$_GET['name'],'email'=>$_GET['email'],'phone'=>$_GET['phone']);
         $controller->{$action}($data);
     }
-    else if($action == "goToNew")
-    {
-        $controller->{$action}();
-    }
     else
     {
         $controller->{$action}();
