@@ -29,8 +29,8 @@
                         <td> <?= $data["email"]; ?> </td>
                         <td> <?= $data["phone"]; ?> </td>
                         <td> 
-                            <a href="#">Editar</a>
-                            <a href="./index.php?c=clients&a=delete&id=<?= $data['id'] ?>">Deletar</a> 
+                            <a href="./index.php?a=search&id=<?= $data['id'] ?>">Editar</a>
+                            <a href="./index.php?a=delete&id=<?= $data['id'] ?>">Deletar</a> 
                         </td>
                         <td>
                         </td>

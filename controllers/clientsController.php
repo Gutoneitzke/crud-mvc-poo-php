@@ -17,6 +17,13 @@
             require_once "./views/index.php";
         }
 
+        public function search($id){
+            $resultData = $this->model->search($id);
+            // print_r($resultData);
+            // die();
+            require_once "./views/index.php";
+        }
+
         public function delete($id){
             $result = $this->model->delete($id);
             // print_r($result);

@@ -20,27 +20,21 @@
         public function search($id){
             $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE id = $id");
             $resultQuery = $sqlSelect->fetchAll();
-            if(!$resultQuery)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return $resultQuery;
         }
 
         public function delete($id){ 
-            if($this->search($id))
-            {
-                $sqlDelete = "DELETE FROM $this->table WHERE id = :id";
-                $resultQuery = $this->connection->prepare($sqlDelete)->execute(['id'=>$id]);
-                return true;
-            }
-            else
+            if(!$this->search($id))
             {
                 return false;
             }
+            $sqlDelete = "DELETE FROM $this->table WHERE id = :id";
+            $resultQuery = $this->connection->prepare($sqlDelete)->execute(['id'=>$id]);
+            if($resultQuery == 1)
+            {
+                return true;
+            }
+            return false;
         }
     }
 
