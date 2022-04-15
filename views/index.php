@@ -11,7 +11,7 @@
     <form action="index.php">
         <input type="search" name="search" placeholder="Pesquisar">
         <input type="hidden" name="a" value="search">
-        <input type="submit" name="submit" value="Enviar">
+        <input type="submit" name="submit" value="Submit">
     </form>
     <div class="content">
         <table>
