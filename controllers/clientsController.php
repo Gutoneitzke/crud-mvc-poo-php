@@ -10,8 +10,9 @@
             $this->model = new ClientModel();
         }
 
-        public function getAll(){
+        public function getAll($data=null){
             $resultData = $this->model->getAll();
+            $returnMessage = $data;
             require_once "./views/index.php";
         }
 
@@ -42,13 +43,13 @@
         public function showMessage($success,$error,$status){
             if(!$status)
             {
-                echo "Erro ao $error!";
+                $returnMessage = "Erro ao $error!";
             }
             else
             {
-                echo "Registro $success com sucesso!";
+                $returnMessage = "Registro $success com sucesso!";
             }
-            $this->getAll();
+            $this->getAll($returnMessage);
         }
     }
 
