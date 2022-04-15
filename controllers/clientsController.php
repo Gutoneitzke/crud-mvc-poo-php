@@ -20,6 +20,16 @@
             require_once "./views/$view.php";
         }
 
+        public function goToNew(){
+            require_once "./views/editCreate.php";
+        }
+
+        public function new($data){
+            $result = $this->model->new($data);
+            $this->showMessage('criado','criar',$result);
+            $this->getAll();
+        }
+
         public function edit($data){
             $result = $this->model->edit($data);
             $this->showMessage('editado','editar',$result);

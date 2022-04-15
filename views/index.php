@@ -13,6 +13,7 @@
         <input type="hidden" name="a" value="search">
         <input type="submit" name="submit" value="Submit">
     </form>
+    <a href="./index.php?a=goToNew">New client</a>
     <div class="content">
         <table>
             <thead>
@@ -32,7 +33,7 @@
                         <td> <?= $data["email"]; ?> </td>
                         <td> <?= $data["phone"]; ?> </td>
                         <td> 
-                            <a href="./index.php?a=search&v=edit&search=<?= $data['id'] ?>">Editar</a>
+                            <a href="./index.php?a=search&v=editCreate&search=<?= $data['id'] ?>">Editar</a>
                             <a href="./index.php?a=delete&id=<?= $data['id'] ?>">Deletar</a> 
                         </td>
                     </tr>

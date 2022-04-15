@@ -23,6 +23,18 @@
             return $resultQuery;
         }
 
+        public function new($data){
+            $sqlUpdate = "INSERT INTO $this->table VALUES (name = :name, email = :email, phone = :phone)";
+            $resultQuery = $this->connection->prepare($sqlUpdate)->execute(['name'=>$data['name'],'email'=>$data['email'],'phone'=>$data['phone']]);
+            print_r($resultQuery);
+            die();
+            if($resultQuery == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public function edit($data){
             $sqlUpdate = "UPDATE $this->table SET name = :name, email = :email, phone = :phone WHERE id = :id";
             $resultQuery = $this->connection->prepare($sqlUpdate)->execute(['id'=>$data['id'],'name'=>$data['name'],'email'=>$data['email'],'phone'=>$data['phone']]);
