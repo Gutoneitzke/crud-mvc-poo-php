@@ -10,22 +10,24 @@
     <a href="index.php">Back</a>
     <h1>Clients Edit | GN</h1>
     <div class="content">
-        <form action="./index.php?a=edit">
+        <form action="./index.php">
             <div class="input-box">
                 <label for="name">Name:</label>
-                <input type="text" placeholder="Write a name to client" value="<?= $resultData['name'] ?>" name="name" required>
+                <input type="text" placeholder="Write a name to client" value="<?= $resultData[0]['name'] ?>" name="name" required>
             </div>
             <br><br>
             <div class="input-box">
                 <label for="email">Email:</label>
-                <input type="email" placeholder="Write a email to client" value="<?= $resultData['email'] ?>" name="email" required>
+                <input type="email" placeholder="Write a email to client" value="<?= $resultData[0]['email'] ?>" name="email" required>
             </div>
             <br><br>
             <div class="input-box">
                 <label for="phone">Phone:</label>
-                <input type="phone" placeholder="Write a phone to client" value="<?= $resultData['phone'] ?>" name="phone" required>
+                <input type="phone" placeholder="Write a phone to client" value="<?= $resultData[0]['phone'] ?>" name="phone" required>
             </div>
             <br><br>
+            <input type="hidden" name="a" value="edit">
+            <input type="hidden" name="id" value="<?= $resultData[0]['id'] ?>">
             <input type="submit" name="edit" value="Submit">
         </form>
     </div>

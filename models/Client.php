@@ -23,6 +23,16 @@
             return $resultQuery;
         }
 
+        public function edit($data){
+            $sqlUpdate = "UPDATE $this->table SET name = :name, email = :email, phone = :phone WHERE id = :id";
+            $resultQuery = $this->connection->prepare($sqlUpdate)->execute(['id'=>$data['id'],'name'=>$data['name'],'email'=>$data['email'],'phone'=>$data['phone']]);
+            if($resultQuery == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public function delete($id){ 
             if(!$this->search($id))
             {

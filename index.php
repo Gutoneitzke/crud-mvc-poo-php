@@ -25,6 +25,11 @@
             $controller->{$action}($data,$view);
         }
     }
+    else if($action == "edit")
+    {
+        $data = array('id'=>$_GET['id'],'name'=>$_GET['name'],'email'=>$_GET['email'],'phone'=>$_GET['phone']);
+        $controller->{$action}($data);
+    }
     else
     {
         $controller->{$action}();
