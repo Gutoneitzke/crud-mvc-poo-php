@@ -51,7 +51,14 @@
     else if($action == "search")
     {
         $data = $_GET['search'];
-        $controller->{$action}($data);
+        if(!$data)
+        {
+            $controller->getAll();
+        }
+        else
+        {
+            $controller->{$action}($data);
+        }
     }
     else
     {
