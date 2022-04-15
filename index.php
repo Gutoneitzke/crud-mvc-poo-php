@@ -6,7 +6,7 @@
 
     $controller = new ClientsController();
 
-    $action = isset($_GET['a']) ? $_GET['a'] : 'getAll';
+    $action = (isset($_GET['a']) || $_POST['a']) ? (isset($_POST['a']) ? $_POST['a'] : $_GET['a']) : 'getAll';
     if($action == "delete")
     {
         $id = $_GET['id'];
@@ -27,12 +27,12 @@
     }
     else if($action == "edit")
     {
-        $data = array('id'=>$_GET['id'],'name'=>$_GET['name'],'email'=>$_GET['email'],'phone'=>$_GET['phone']);
+        $data = array('id'=>$_POST['id'],'name'=>$_POST['name'],'email'=>$_POST['email'],'phone'=>$_POST['phone']);
         $controller->{$action}($data);
     }
     else if($action == "new")
     {
-        $data = array('name'=>$_GET['name'],'email'=>$_GET['email'],'phone'=>$_GET['phone']);
+        $data = array('name'=>$_POST['name'],'email'=>$_POST['email'],'phone'=>$_POST['phone']);
         $controller->{$action}($data);
     }
     else

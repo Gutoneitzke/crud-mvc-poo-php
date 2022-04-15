@@ -10,7 +10,7 @@
     <a href="index.php">Back</a>
     <h1>Clients config | GN</h1>
     <div class="content">
-        <form action="index.php">
+        <form action="index.php" method="POST">
             <div class="input-box">
                 <label for="name">Name:</label>
                 <input type="text" placeholder="Write a name to client" value="<?= isset($resultData[0]['name']) ? $resultData[0]['name'] : '' ?>" name="name" required>
