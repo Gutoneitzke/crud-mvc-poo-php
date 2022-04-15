@@ -8,9 +8,13 @@
 </head>
 <body>
     <h1>Clients List | GN</h1>
+    <form action="index.php">
+        <input type="search" name="search" placeholder="Pesquisar">
+        <input type="hidden" name="a" value="search">
+        <input type="submit" name="submit" value="Enviar">
+    </form>
     <div class="content">
         <table>
-
             <thead>
                 <tr>
                     <th>ID</th>
@@ -20,7 +24,6 @@
                     <th></th>
                 </tr>
             </thead>
-
             <tbody>
                 <?php foreach($resultData as $data): ?>
                     <tr>
@@ -37,7 +40,6 @@
                     </tr>
                 <?php endforeach; ?>
             </tbody>
-            
         </table>
     </div>
 </body>

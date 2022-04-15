@@ -17,8 +17,8 @@
             require_once "./views/index.php";
         }
 
-        public function search($id){
-            $resultData = $this->model->search($id);
+        public function search($data){
+            $resultData = $this->model->search($data);
             // print_r($resultData);
             // die();
             require_once "./views/index.php";
@@ -47,6 +47,11 @@
     {
         $id = $_GET['id'];
         $controller->{$action}($id);
+    }
+    else if($action == "search")
+    {
+        $data = $_GET['search'];
+        $controller->{$action}($data);
     }
     else
     {

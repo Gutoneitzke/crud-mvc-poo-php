@@ -17,8 +17,8 @@
             return $resultQuery;
         }
 
-        public function search($id){
-            $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE id = $id");
+        public function search($data){
+            $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE id = '$data' or name LIKE '%$data%' or email LIKE '%$data%' or phone LIKE '%$data%'");
             $resultQuery = $sqlSelect->fetchAll();
             return $resultQuery;
         }
