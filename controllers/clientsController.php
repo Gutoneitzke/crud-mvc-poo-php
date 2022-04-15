@@ -11,23 +11,16 @@
         }
 
         public function getAll(){
-            $resultData = $this->model->getAll();
-            // print_r($resultData);
-            // die();
             require_once "./views/index.php";
         }
 
         public function search($data){
             $resultData = $this->model->search($data);
-            // print_r($resultData);
-            // die();
             require_once "./views/index.php";
         }
 
         public function delete($id){
             $result = $this->model->delete($id);
-            // print_r($result);
-            // die();
             if(!$result)
             {
                 echo "Erro ao deletar! Registro inexistente";
