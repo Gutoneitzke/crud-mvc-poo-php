@@ -26,20 +26,17 @@
 
         public function new($data){
             $result = $this->model->new($data);
-            $this->showMessage('criado','criar',$result);
-            $this->getAll();
+            header("Location: index.php?m=insert&a=showMessage&s=$result");
         }
 
         public function edit($data){
             $result = $this->model->edit($data);
-            $this->showMessage('editado','editar',$result);
-            $this->getAll();
+            header("Location: index.php?m=edit&a=showMessage&s=$result");
         }
 
         public function delete($id){
             $result = $this->model->delete($id);
-            $this->showMessage('deletado','deletar',$result);
-            $this->getAll();
+            header("Location: index.php?m=delete&a=showMessage&s=$result");
         }
 
         public function showMessage($success,$error,$status){
@@ -51,6 +48,7 @@
             {
                 echo "Registro $success com sucesso!";
             }
+            $this->getAll();
         }
     }
 
