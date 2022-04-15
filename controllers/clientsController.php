@@ -11,6 +11,7 @@
         }
 
         public function getAll(){
+            $resultData = $this->model->getAll();
             require_once "./views/index.php";
         }
 
