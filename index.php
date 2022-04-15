@@ -6,7 +6,7 @@
 
     $controller = new ClientsController();
 
-    $action = (isset($_GET['a']) || $_POST['a']) ? (isset($_POST['a']) ? $_POST['a'] : $_GET['a']) : 'getAll';
+    $action = (isset($_GET['a']) || isset($_POST['a'])) ? (isset($_POST['a']) ? $_POST['a'] : $_GET['a']) : 'getAll';
     if($action == "delete")
     {
         $id = $_GET['id'];
