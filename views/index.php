@@ -9,7 +9,7 @@
 <body>
     <?php if(!empty($returnMessage)): ?>
         <p><?= $returnMessage ?></p>
-        <button>x</button>
+        <button onclick="reload()">x</button>
     <?php endif; ?>
     <h1>Clients List | GN</h1>
     <form action="index.php">
@@ -46,4 +46,10 @@
         </table>
     </div>
 </body>
+<script>
+    function reload()
+    {
+        window.location.replace('index.php');
+    }
+</script>
 </html>
