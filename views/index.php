@@ -14,11 +14,11 @@
     <?php endif; ?>
     <h1>Clients List | GN</h1>
     <form action="index.php">
-        <input type="search" name="search" placeholder="Pesquisar">
+        <input class="input" type="search" name="search" placeholder="Pesquisar">
         <input type="hidden" name="a" value="search">
-        <input type="submit" name="submit" value="Submit">
+        <input class="button" type="submit" name="submit" value="Submit">
     </form>
-    <a href="./index.php?a=goToNew">New client</a>
+    <a class="button" href="./index.php?a=goToNew">New client</a>
     <div class="content">
         <table class="table">
             <thead>
@@ -38,8 +38,8 @@
                         <td> <?= $data["email"]; ?> </td>
                         <td> <?= $data["phone"]; ?> </td>
                         <td> 
-                            <a href="./index.php?a=search&v=editCreate&search=<?= $data['id'] ?>">Editar</a>
-                            <a href="./index.php?a=delete&id=<?= $data['id'] ?>">Deletar</a> 
+                            <a class="button btn-edit" href="./index.php?a=search&v=editCreate&search=<?= $data['id'] ?>">Editar</a>
+                            <a class="button btn-delete" href="./index.php?a=delete&id=<?= $data['id'] ?>">Deletar</a> 
                         </td>
                     </tr>
                 <?php endforeach; ?>
