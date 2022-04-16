@@ -17,6 +17,29 @@ body{
     gap: 2em;
 }
 
+.box-message{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+    border: 1px solid var(--color-dark3);
+    padding: 0 1em;
+    border-radius: 5px;
+    background: var(--color-dark2);
+}
+
+.btn-close-message{
+    background: none;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.btn-close-message svg{
+    margin-top: 4px;
+}
+
 .input{
     padding: 6px;
     border-radius: 5px;
