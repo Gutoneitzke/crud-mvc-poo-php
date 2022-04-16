@@ -39,7 +39,7 @@
                         <td> <?= $data["phone"]; ?> </td>
                         <td> 
                             <a class="button btn-edit" href="./index.php?a=search&v=editCreate&search=<?= $data['id'] ?>">Editar</a>
-                            <a class="button btn-delete" href="./index.php?a=delete&id=<?= $data['id'] ?>">Deletar</a> 
+                            <button class="button btn-delete" onclick="verifyDelete(<?= $data['id'] ?>)">Deletar</button> 
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -48,6 +48,15 @@
     </div>
 </body>
 <script>
+    function verifyDelete(id)
+    {
+        let result = confirm('Você tem certeza que deseja deletar o registro com id: '+id);
+        console.log(result);
+        if(result)
+        {
+            window.location.replace('./index.php?a=delete&id='+id);
+        }
+    }
     function reload()
     {
         window.location.replace('index.php');
