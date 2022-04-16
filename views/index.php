@@ -20,7 +20,7 @@
     </form>
     <a href="./index.php?a=goToNew">New client</a>
     <div class="content">
-        <table>
+        <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
