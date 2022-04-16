@@ -17,8 +17,15 @@
             return $resultQuery;
         }
 
-        public function search($data){
-            $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE id = '$data' or name LIKE '%$data%' or email LIKE '%$data%' or phone LIKE '%$data%'");
+        public function search($data,$view=null){
+            if(!empty($view))
+            {
+                $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE id = '$data'");
+            }
+            else
+            {
+                $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE id = '$data' or name LIKE '%$data%' or email LIKE '%$data%' or phone LIKE '%$data%'");
+            }
             $resultQuery = $sqlSelect->fetchAll();
             return $resultQuery;
         }

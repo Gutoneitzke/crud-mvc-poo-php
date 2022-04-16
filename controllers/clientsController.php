@@ -17,7 +17,7 @@
         }
 
         public function search($data,$view){
-            $resultData = $this->model->search($data);
+            $resultData = $this->model->search($data,$view);
             require_once "./views/$view.php";
         }
 
