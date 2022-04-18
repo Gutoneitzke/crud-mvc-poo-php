@@ -24,7 +24,7 @@
             <br><br>
             <div class="input-box">
                 <label for="phone">Phone:</label>
-                <input class="input" type="phone" placeholder="Write a phone to client" value="<?= isset($resultData[0]['phone']) ? $resultData[0]['phone'] : '' ?>" name="phone" required>
+                <input class="input" type="number" placeholder="Write a phone to client" value="<?= isset($resultData[0]['phone']) ? $resultData[0]['phone'] : '' ?>" name="phone" required>
             </div>
             <br><br>
             <input type="hidden" name="a" value="<?= isset($resultData[0]['id']) ? 'edit' : 'new' ?>">

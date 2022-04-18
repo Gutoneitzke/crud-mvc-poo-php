@@ -41,13 +41,13 @@
         }
 
         public function showMessage($success,$error,$status){
-            if(!$status)
+            if($status == 1)
             {
-                $returnMessage = "Erro ao $error!";
+                $returnMessage = "Registro $success com sucesso!";
             }
             else
             {
-                $returnMessage = "Registro $success com sucesso!";
+                $returnMessage = "Erro ao $error!";
             }
             $this->getAll($returnMessage);
         }

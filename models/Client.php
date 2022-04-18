@@ -41,13 +41,20 @@
         }
 
         public function edit($data){
-            $sqlUpdate = "UPDATE $this->table SET name = :name, email = :email, phone = :phone WHERE id = :id";
-            $resultQuery = $this->connection->prepare($sqlUpdate)->execute(['id'=>$data['id'],'name'=>$data['name'],'email'=>$data['email'],'phone'=>$data['phone']]);
-            if($resultQuery == 1)
+            if(strlen($data['phone']) <= 11)
             {
-                return true;
+                $sqlUpdate = "UPDATE $this->table SET name = :name, email = :email, phone = :phone WHERE id = :id";
+                $resultQuery = $this->connection->prepare($sqlUpdate)->execute(['id'=>$data['id'],'name'=>$data['name'],'email'=>$data['email'],'phone'=>$data['phone']]);
+                if($resultQuery == 1)
+                {
+                    return true;
+                }
+                return false;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
 
         public function delete($id){ 

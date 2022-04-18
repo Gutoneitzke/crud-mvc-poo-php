@@ -15,9 +15,9 @@
 
     $action = (isset($_GET['a']) || isset($_POST['a'])) ? (isset($_POST['a']) ? $_POST['a'] : $_GET['a']) : 'getAll';
     $message = isset($_GET['m']) ? $_GET['m'] : '';
-    $status = isset($_GET['s']) ? $_GET['s'] : '';
+    $status = !empty($_GET['s']) ? $_GET['s'] : '';
 
-    if(!empty($message) && !empty($status))
+    if(!empty($message) && isset($_GET['s']))
     {
         $controller->{$action}($messages[$message][0],$messages[$message][1],$status);
     }
