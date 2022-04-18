@@ -62,6 +62,7 @@ body{
 }
 
 .btn-delete{
+    font-size: 15px;
     background-color: var(--color-red);
 }
 
