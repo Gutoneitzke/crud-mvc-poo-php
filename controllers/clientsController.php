@@ -15,7 +15,7 @@
             require_once "./views/index.php";
         }
 
-        public function search($data,$view){
+        public function search($data,$view=null){
             $resultData = $this->model->search($data,$view);
             require_once "./views/$view.php";
         }
