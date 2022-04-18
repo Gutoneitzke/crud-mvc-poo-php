@@ -1,7 +1,6 @@
 <?php
 
     require_once "./models/Client.php";
-
     class ClientsController{
 
         private $model;
@@ -27,17 +26,21 @@
 
         public function new($data){
             $result = $this->model->new($data);
-            header("Location: index.php?m=insert&a=showMessage&s=$result");
+            $this->redirectWithMessage('insert',$result);
         }
 
         public function edit($data){
             $result = $this->model->edit($data);
-            header("Location: index.php?m=edit&a=showMessage&s=$result");
+            $this->redirectWithMessage('edit',$result);
         }
 
         public function delete($id){
             $result = $this->model->delete($id);
-            header("Location: index.php?m=delete&a=showMessage&s=$result");
+            $this->redirectWithMessage('delete',$result);
+        }
+
+        public function redirectWithMessage($type,$result){
+            header("Location: index.php?m=$type&a=showMessage&s=$result");
         }
 
         public function showMessage($success,$error,$status){
