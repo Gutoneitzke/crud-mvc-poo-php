@@ -33,11 +33,7 @@
         public function new($data){
             $sqlUpdate = "INSERT INTO $this->table (name,email,phone) VALUES (:name, :email, :phone)";
             $resultQuery = $this->connection->prepare($sqlUpdate)->execute(['name'=>$data['name'],'email'=>$data['email'],'phone'=>$data['phone']]);
-            if($resultQuery == 1)
-            {
-                return true;
-            }
-            return false;
+            return $this->verifyReturn($resultQuery);
         }
 
         public function edit($data){
@@ -45,11 +41,7 @@
             {
                 $sqlUpdate = "UPDATE $this->table SET name = :name, email = :email, phone = :phone WHERE id = :id";
                 $resultQuery = $this->connection->prepare($sqlUpdate)->execute(['id'=>$data['id'],'name'=>$data['name'],'email'=>$data['email'],'phone'=>$data['phone']]);
-                if($resultQuery == 1)
-                {
-                    return true;
-                }
-                return false;
+                return $this->verifyReturn($resultQuery);
             }
             else
             {
@@ -64,7 +56,11 @@
             }
             $sqlDelete = "DELETE FROM $this->table WHERE id = :id";
             $resultQuery = $this->connection->prepare($sqlDelete)->execute(['id'=>$id]);
-            if($resultQuery == 1)
+            return $this->verifyReturn($resultQuery);
+        }
+
+        public function verifyReturn($result){
+            if($result == 1)
             {
                 return true;
             }
