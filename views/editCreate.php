@@ -8,7 +8,7 @@
     <title>Clients</title>
 </head>
 <body>
-    <a class="button" href="index.php">Back</a>
+    <a class="button btn-back" href="index.php">Back</a>
     <h1>Clients config</h1>
     <div class="content">
         <form action="index.php" method="POST">

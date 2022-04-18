@@ -61,6 +61,10 @@ body{
     background-color: var(--color-dark3);
 }
 
+.btn-back{
+    background-color: var(--color-dark3);
+}
+
 .btn-delete{
     font-size: 15px;
     background-color: var(--color-red);
