@@ -41,13 +41,11 @@
     }
     else if($action == "edit")
     {
-        $data = array('id'=>$_POST['id'],'name'=>$_POST['name'],'email'=>$_POST['email'],'phone'=>$_POST['phone']);
-        $controller->{$action}($data);
+        $controller->{$action}($_POST);
     }
     else if($action == "new")
     {
-        $data = array('name'=>$_POST['name'],'email'=>$_POST['email'],'phone'=>$_POST['phone']);
-        $controller->{$action}($data);
+        $controller->{$action}($_POST);
     }
     else
     {
