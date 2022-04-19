@@ -43,10 +43,7 @@
                 $resultQuery = $this->connection->prepare($sqlUpdate)->execute(['id'=>$data['id'],'name'=>$data['name'],'email'=>$data['email'],'phone'=>$data['phone']]);
                 return $this->verifyReturn($resultQuery);
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         public function delete($id){ 
