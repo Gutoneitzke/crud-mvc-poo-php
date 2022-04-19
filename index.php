@@ -4,13 +4,6 @@
     // include_once ('./controllers/'.$nameController.'Controller.php');
     require_once ('./controllers/clientsController.php');
 
-    $messages = [
-        'edit' => ['editado','editar'],
-        'delete' => ['deletado','deletar'],
-        'update' => ['atualizado','atualizar'],
-        'insert' => ['inserido','inserir']
-    ];
-
     $controller = new ClientsController();
 
     $action = (isset($_GET['a']) || isset($_POST['a'])) ? (isset($_POST['a']) ? $_POST['a'] : $_GET['a']) : 'getAll';
@@ -19,6 +12,12 @@
 
     if(!empty($message) && isset($_GET['s']))
     {
+        $messages = [
+            'edit' => ['editado','editar'],
+            'delete' => ['deletado','deletar'],
+            'update' => ['atualizado','atualizar'],
+            'insert' => ['inserido','inserir']
+        ];
         $controller->{$action}($messages[$message][0],$messages[$message][1],$status);
     }
     else if($action == "delete")
