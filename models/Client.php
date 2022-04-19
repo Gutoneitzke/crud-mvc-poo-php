@@ -18,13 +18,13 @@
         }
 
         public function search($data,$view=null){
-            if(!empty($view))
+            if($view == 'index')
             {
-                $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE id = '$data'");
+                $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE id = '$data' or name LIKE '%$data%' or email LIKE '%$data%' or phone LIKE '%$data%'");
             }
             else
             {
-                $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE id = '$data' or name LIKE '%$data%' or email LIKE '%$data%' or phone LIKE '%$data%'");
+                $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE id = '$data'");
             }
             $resultQuery = $sqlSelect->fetchAll();
             return $resultQuery;
